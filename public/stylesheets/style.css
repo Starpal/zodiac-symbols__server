@@ -1,0 +1,29 @@
+body {
+	padding: 50px;
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+	color: #00B7FF;
+}
+
+input {
+	background-color: pink;
+	margin-bottom: 60px;
+}
+
+.upload-button {
+	background-color: white;
+}
+
+.main {
+	transform: translate(10%, 10%);
+	top: 50;
+	left: 50;
+
+}
+img{
+	height: 500px;
+	width: auto;
+
+}
