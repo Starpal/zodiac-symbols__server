@@ -1,5 +1,6 @@
 require('dotenv').config();
 var express = require('express');
+const fetch = require('node-fetch');
 var createError = require('http-errors');
 var hbs = require('express-handlebars')
 var path = require('path');
@@ -46,6 +47,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(logger("dev"));
 
 app.use('/', indexRouter);
+
+// ping
+const serverUrl = process.env.API_URL;
+
+setInterval(() => {
+    fetch(serverUrl)
+        .then(res => console.log(`Pinged ${serverUrl}: ${res.status}`))
+        .catch(err => console.error(`Error pinging ${serverUrl}: ${err}`));
+}, 20 * 60 * 1000); // per ogni 20 minuti (1200000 ms)
+
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
 	next(createError(404));
