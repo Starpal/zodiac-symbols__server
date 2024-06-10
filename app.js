@@ -52,10 +52,10 @@ app.use('/', indexRouter);
 const serverUrl = process.env.API_URL;
 
 setInterval(() => {
-    fetch(serverUrl)
-        .then(res => console.log(`Pinged ${serverUrl}: ${res.status}`))
-        .catch(err => console.error(`Error pinging ${serverUrl}: ${err}`));
-}, 20 * 60 * 1000); // per ogni 20 minuti (1200000 ms)
+	fetch(serverUrl)
+		.then(res => console.log(`Pinged ${serverUrl}: ${res.status}`))
+		.catch(err => console.error(`Error pinging ${serverUrl}: ${err}`));
+}, 14 * 60 * 1000); // per ogni 14 minuti (840000 ms)
 
 
 // catch 404 and forward to error handler
